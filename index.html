@@ -1,0 +1,273 @@
+<!doctype html> 
+<!--[if IEMobile]> <html class="no-js ie-mobile" lang="en"> <![endif]--> 
+<!--[if (lt IE 7)&!(IEMobile) ]> <html class="no-js ie6" lang="en"> <![endif]--> 
+<!--[if (IE 7)&!(IEMobile) ]> <html class="no-js ie7" lang="en"> <![endif]--> 
+<!--[if (IE 8)&!(IEMobile) ]> <html class="no-js ie8" lang="en"> <![endif]--> 
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]--> 
+<head> 
+	<title>SEO Lint</title> 
+	
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="copyright" href="#copyright" />
+    <!-- uncomment if HTML5 tags are required
+    <script src="js/lib/modernizr-min.js"></script> -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js">\x3C/script>')</script>    
+</head> 
+ 
+<body class="debug"> 
+<!-- begin test cases -->
+<h1></h1>    
+
+<ul class="images">
+    <li>
+        <img />
+    </li>
+    <li>   
+        <img src="" />
+    </li>
+    <li>     
+        <img src="" alt="" />
+    </li>
+    <li>     
+        <img src="" alt="" height="" />
+    </li>
+    <li>     
+        <img src="" alt="" height="" width="" />
+    </li>
+    <li>     
+        <img src="" alt="" height="10px" width="10px" />
+    </li>
+</ul>
+
+<ul id="links">
+	<li><a href="page-1.html">Page 1 (internal)</a></li>
+    <li><a href="page-2.html">Page 2 (broken)</a></li>
+    <li><a href="page-1.html">Page 1 (internal)</a></li>
+    <li><a href="">Empty</a></li>
+    <li><a href="">Empty</a></li>
+    <li><a href="page-2.html">Page 2 (broken)</a></li>
+    <li><a href="http://www.nouvelleniche.com">External Link</a></li>
+</ul><!-- #links -->
+
+<!-- end test cases -->
+<style>
+.seolint-broken {
+    position:relative;
+    width:1.5em;
+    height:1.5em;
+    margin:30% auto;
+    border-radius:50%;
+    border:solid 0.35em #f00;
+    background-color: #333;
+    font-size: 9px;
+}
+
+.seolint-broken:before { 
+    display:block;
+    content:"";
+    position:absolute;
+    top:0.6em;;
+    width:1.5em;
+    height:0.3em;
+    background: #f00;
+    -webkit-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    transform: rotate(35deg);
+}
+
+
+.seolint-highlight {
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMxJSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg1JSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjkzIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(left,  rgba(255,0,0,1) 0%, rgba(255,0,0,0) 31%, rgba(255,0,0,0) 85%, rgba(255,0,0,0.93) 99%, rgba(255,0,0,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,0,0,1)), color-stop(31%,rgba(255,0,0,0)), color-stop(85%,rgba(255,0,0,0)), color-stop(99%,rgba(255,0,0,0.93)), color-stop(100%,rgba(255,0,0,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(255,0,0,1) 0%,rgba(255,0,0,0) 31%,rgba(255,0,0,0) 85%,rgba(255,0,0,0.93) 99%,rgba(255,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(255,0,0,1) 0%,rgba(255,0,0,0) 31%,rgba(255,0,0,0) 85%,rgba(255,0,0,0.93) 99%,rgba(255,0,0,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(255,0,0,1) 0%,rgba(255,0,0,0) 31%,rgba(255,0,0,0) 85%,rgba(255,0,0,0.93) 99%,rgba(255,0,0,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(255,0,0,1) 0%,rgba(255,0,0,0) 31%,rgba(255,0,0,0) 85%,rgba(255,0,0,0.93) 99%,rgba(255,0,0,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff0000',GradientType=1 ); /* IE6-8 */
+
+}
+
+
+/* begin anchors */
+
+body {
+    counter-reset: seolint-empty-img-src;
+    counter-reset: seolint-empty-link;
+}
+
+a[href=''] {
+    outline: 1px solid #f00;
+}
+
+a[href='']:after {
+    content: " Empty Link " counter(seolint-empty-link) " ";
+    counter-increment: seolint-empty-link;
+    outline: 1px solid #333;
+    font-family: sans-serif;
+    padding: 2px;
+    margin-left: 0.5em;
+    font-size: .8em;
+    color: #eee;
+    background-color: #333;
+}
+
+/* end anchors */
+
+/* begin images */
+
+img {
+    height: 10px;
+    width: 10px;
+}
+
+img[src=''] {
+    outline: 1px solid #f00;
+}
+
+img[src='']:before {
+    color: #fff;
+    background: #333;
+    padding: 0.2em;
+    content: " Empty Image Src ";
+}
+
+img[alt=''] {
+    outline: 1px solid #444;
+}
+
+img[alt='']:before {
+    color: #fff;
+    background: #333;
+    padding: 0.2em;
+    content: " Empty Alt ";
+}
+
+img:not([alt]) {
+    outline: 1px solid #0f0;
+    color: #fff;
+    background: #333;
+    content: "Missing Alt";
+}
+
+img:not(gchack) {
+    color: #fff;
+    background: #333;
+    content: "Missing Alt";
+}
+
+img:not(src) {
+    outline: 1px solid #0f0;
+}
+
+/* end images */
+
+/* begin headings */
+
+h1:empty:before {
+    outline: 1px solid #f00;
+    color: #fff;
+    font-size: 12px;
+    background: #333;
+    padding: 0.2em;
+    content: " Empty H1 ";
+}
+
+/* end headings */
+
+</style>		
+<script>
+// create namespace
+// @TODO: change to a module with sa namespace export
+// @TODO: add JSDocs
+if (typeof sa != "object") { var sa = {}; }
+
+sa.seoLint = (function($, win, doc) {
+
+    var links,
+        init = function () {
+            $(function() {
+                var domNodes = $("body a");
+                nodeIterator(domNodes, findBrokenReferences);
+                //getLinks();
+            });
+        }(); // self invoking
+
+    function nodeIterator (domNodes, callBack) {
+        $(domNodes).each(function (i, domNode) {
+            callBack(domNode, i);
+        });
+    }
+
+    function createLabel (pos, index, linkWidth) {
+        $('<div class="seolint-highlight">✖</div>', {
+            "id": "seoLintLabel" + index,
+        })
+        .css({
+            "position": "absolute",
+            "pointer-events": "none",
+            "color": "#fff",
+            "font-size": "18px",
+            "line-height": "22px",
+            "padding-left": "5px",
+            "border-radius": "5px",
+            "border": "2px solid #f00",
+            "width": linkWidth + "px",
+            "height": "20px",
+            "top": pos.top - 2,
+            "left": pos.left  
+        })
+        /*
+        .html('<div class="seolint-broken"></div>')
+        .find("div")
+        .css({
+            "position": "relative",
+            "top": "-2px",
+            "left": "1px"
+        })
+        .end()
+        */
+        .appendTo("body");
+    }    
+
+    function findBrokenReferences (domNode, i) {
+        // @TODO: change to a switch statement?
+        var nodeSrc;
+        if (domNode.nodeName === "A") {
+            nodeSrc = domNode.href;
+        } else if (domNode.nodeName === "IMG") {
+            nodeSrc = domNode.src;
+        }
+
+        $.ajax({
+            cache: 'false',
+            url: nodeSrc,
+            success: function(data, textStatus, xhr) {
+                //console.log("success");
+                //console.log(xhr.status);
+                //console.log(linkElem[0].href);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                if (xhr.status == 404) {
+                    //console.log("404");
+                    createLabel($(domNode).offset(), i, $(domNode).width());                   
+                }
+            }
+        })
+    }
+
+    var contract = {
+
+    };
+
+    return contract;
+
+}(jQuery, window, document));
+</script>
+</body> 
+</html>
