@@ -11,7 +11,7 @@ Typical errors include:
 - Empty or missing alt attributes
 - etc.
 
-Currently it's a work in progress
+Currently it's a work in progress, be warned!
 
 Planned Features
 ----------------
